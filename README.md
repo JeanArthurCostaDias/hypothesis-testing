@@ -12,6 +12,7 @@ This repository contains Jupyter Notebooks and utility functions related to stat
 6. [Q-Q Plots](./6.%20Q-Q%20plots.ipynb)
 7. [Tests for Paired Data](./7.%20Tests%20for%20paired%20data.ipynb)
 8. [Chi-Squared for Categorical Data](./8.%20Chi%20squared%20for%20categorical%20data.ipynb)
+9. [Bootstrap Confidence Intervals](./9.%20Bootstrap.ipynb)
 
 ## Custom Python Module (mystats):
 
