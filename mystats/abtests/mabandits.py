@@ -116,6 +116,12 @@ class MABandit:
         stats = {action_name: {'rewards': []} for action_name in self.action_names}
         return stats
 
+    def reset(self):
+        self.sampler = self._get_sampler()
+        self.action_stats = self._init_stats()
+        self.history = {'actions': [], 'rewards': []}
+        self.mean_rewards = self._init_mean_rewards()
+
     def _get_sampler(self):
         if self.strategy in ('epsilon-greedy', 'epsilon-greedy-decay'):
             sampler = RandomSampler(self.action_names)
@@ -155,8 +161,10 @@ class MABandit:
             total_reward += reward_sum
             total_trials += n_trials
             reward_mean = reward_sum/n_trials if n_trials else 0
+            #print(f'name: {name} n_trials: {n_trials} reward_sum: {reward_sum} mean: {reward_mean :3.6f}')
             self.mean_rewards[name].append(reward_mean)
         self.mean_rewards['total'].append(total_reward/total_trials)
+        #print(f'total_trials: {total_trials} total_reward: {total_reward} mean: {total_reward/total_trials :3.6f} \n')
 
     def _get_action_from_sampler(self):
         action_name = self.sampler.sample()
@@ -168,11 +176,11 @@ class MABandit:
             action_choice = self._get_action_from_sampler()
         else:
             mean_rewards = [
-                np.mean(self.action_stats[action_name]['rewards'])
-                if len(self.action_stats[action_name]['rewards']) else 0
+                self.mean_rewards[action_name][-1] if len(self.mean_rewards[action_name]) else 0
                 for action_name in self.action_names
             ]
             action_choice = self.action_names[np.argmax(mean_rewards)]
+        #print(f'Action: {action_choice} explore: {explore}')
         reward = self.test_environment.get_reward(action_choice)
         self._update(action_choice, reward)
 
@@ -185,7 +193,8 @@ class MABandit:
         reward = self.test_environment.get_reward(action_choice)
         self._update(action_choice, reward)
 
-    def run(self, n_iter: int = 1000):
+    def run(self, n_iter: int = 2000):
+        self.reset()
         if self.strategy == 'epsilon-greedy':
             for _ in range(n_iter):
                 self._run_epsilon_greedy()
@@ -221,11 +230,17 @@ if __name__ == '__main__':
 
     print('START')
     b = MABandit(['A', 'B'], 'epsilon-greedy', environment)
+    b.run(80000)
+    print(b.mean_rewards['A'][-5:])
+    print(b.mean_rewards['B'][-5:])
+    print(b.mean_rewards['total'][:5])
+    print(b.mean_rewards['total'][-5:])
+    '''
     for _ in range(10):
         b.run()
     print(len(b.history['actions']))
 
-    b = MABandit(['A', 'B'], 'epsilon-greedy-decay', epsilon=500, test_environment=environment)
+    b = MABandit(['A', 'B'], 'epsilon-greedy-decay', epsilon=50, test_environment=environment)
     for _ in range(10):
         b.run()
     print(len(b.history['actions']))
@@ -234,3 +249,4 @@ if __name__ == '__main__':
     for _ in range(10):
         b.run()
     print(len(b.history['actions']))
+    '''
