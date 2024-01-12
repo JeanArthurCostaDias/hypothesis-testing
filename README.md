@@ -13,7 +13,7 @@ This repository contains Jupyter Notebooks and utility functions related to stat
 7. [Tests for Paired Data](./7.%20Tests%20for%20paired%20data.ipynb)
 8. [Chi-Squared for Categorical Data](./8.%20Chi%20squared%20for%20categorical%20data.ipynb)
 9. [Bootstrap Confidence Intervals](./9.%20Bootstrap.ipynb)
-10. [Multiarmed Bandits](./10.%20Multiarmed Bandits.ipynb)
+10. [Multiarmed Bandits](./10.%20Multiarmed%20Bandits.ipynb)
 
 ## Custom Python Module (mystats):
 
