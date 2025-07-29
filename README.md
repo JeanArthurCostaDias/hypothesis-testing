@@ -65,32 +65,10 @@ Estas instruções são para um sistema baseado em Debian, como o Ubuntu.
 
 ## Passo a Passo para Executar os Notebooks
 
-1.  **Abra o Terminal**
-    A primeira coisa a fazer é abrir o terminal do seu sistema. Você pode usar o atalho de teclado:
-    `Ctrl + Alt + T`
-
-2.  **Navegue até a Pasta do Projeto**
-    Use o comando `cd` (change directory) para entrar na pasta onde você salvou os arquivos `.ipynb`. Por exemplo, se você salvou os notebooks em uma pasta chamada `testes-hipoteses` dentro dos seus Documentos, o comando seria:
-
-    ```bash
-    cd Documentos/testes-hipoteses/
-    ```
-
-    > **Dica**: Você pode usar o comando `ls` para listar os arquivos e diretórios e confirmar que você está na pasta correta. Você deverá ver a lista dos arquivos `.ipynb`.
-
-3.  **Inicie o Jupyter Notebook**
-    Uma vez dentro da pasta correta, execute o seguinte comando no terminal:
-
-    ```bash
-    jupyter notebook
-    ```
-
-    Ao executar este comando, você verá algumas mensagens de log no terminal, e uma nova aba deverá abrir automaticamente no seu navegador de internet padrão. Essa aba é a interface do Jupyter, mostrando todos os arquivos da pasta atual.
-
-4.  **Abra um Notebook**
+1.  **Abra um Notebook**
     Na interface do Jupyter no seu navegador, clique no nome de um dos arquivos `.ipynb` para abri-lo. Por exemplo, clique em `1. Hypothesis intro.ipynb`.
 
-5.  **Execute as Células de Código**
+2.  **Execute as Células de Código**
     Um notebook é composto por **células** (cells). Existem células de texto (como esta que você está lendo) e células de código. Para "rodar" o notebook, você precisa executar as células de código.
 
       * Clique em uma célula de código para selecioná-la.
