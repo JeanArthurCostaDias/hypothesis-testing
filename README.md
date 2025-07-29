@@ -35,20 +35,6 @@ Estas instruções são para um sistema baseado em Debian, como o Ubuntu.
     pip3 install numpy scipy statsmodels pandas matplotlib
     ```
 
-## Executando os Notebooks
-
-1.  Navegue até o diretório onde você salvou os arquivos `.ipynb` no seu terminal.
-
-2.  Inicie o Jupyter Notebook com o seguinte comando:
-
-    ```bash
-    jupyter notebook
-    ```
-
-    Isso abrirá uma nova aba em seu navegador com a interface do Jupyter.
-
-3.  Clique no nome do notebook que você deseja abrir e começar a explorar.
-
 ## Descrições dos Notebooks
 
 1.  **1. Hypothesis intro.ipynb:** Apresenta os conceitos fundamentais do teste de hipóteses.
@@ -65,10 +51,19 @@ Estas instruções são para um sistema baseado em Debian, como o Ubuntu.
 
 ## Passo a Passo para Executar os Notebooks
 
-1.  **Abra um Notebook**
-    Na interface do Jupyter no seu navegador, clique no nome de um dos arquivos `.ipynb` para abri-lo. Por exemplo, clique em `1. Hypothesis intro.ipynb`.
+1.  Navegue até o diretório onde você salvou os arquivos `.ipynb` no seu terminal.
 
-2.  **Execute as Células de Código**
+2.  Inicie o Jupyter Notebook com o seguinte comando:
+
+    ```bash
+    jupyter notebook
+    ```
+
+    Isso abrirá uma nova aba em seu navegador com a interface do Jupyter.
+
+3.  Na interface do Jupyter no seu navegador, clique no nome de um dos arquivos `.ipynb` para abri-lo. Por exemplo, clique em `1. Hypothesis intro.ipynb`.
+
+4.  **Execute as Células de Código**
     Um notebook é composto por **células** (cells). Existem células de texto (como esta que você está lendo) e células de código. Para "rodar" o notebook, você precisa executar as células de código.
 
       * Clique em uma célula de código para selecioná-la.
