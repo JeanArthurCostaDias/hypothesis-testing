@@ -63,7 +63,7 @@ Estas instruções são para um sistema baseado em Debian, como o Ubuntu.
 10. **10. Multiarmed Bandits.ipynb:** Apresenta o problema dos "multi-armed bandits", uma aplicação de testes de hipóteses em aprendizado por reforço.
 
 
-### Passo a Passo para Executar os Notebooks
+## Passo a Passo para Executar os Notebooks
 
 1.  **Abra o Terminal**
     A primeira coisa a fazer é abrir o terminal do seu sistema. Você pode usar o atalho de teclado:
