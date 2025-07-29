@@ -1,3 +1,5 @@
+Github Original: https://github.com/insdout/hypothesis-testing
+
 # Tutorial: Executando os Notebooks de Teste de Hipóteses
 
 ## Introdução
